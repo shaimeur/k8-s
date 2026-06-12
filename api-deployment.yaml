@@ -15,7 +15,13 @@ spec:
         app: synergychat-api
     spec:
       containers:
-      - name: synergychat-api
-        image: bootdotdev/synergychat-api:latest
-        ports:
-        - containerPort: 80
+       - name: synergychat-api
+         image: bootdotdev/synergychat-api:latest
+         ports:
+         - containerPort: 80
+         env:
+           - name: API_PORT
+             valueFrom:
+               configMapKeyRef:
+                 name: synergychat-api-configmap
+                 key: API_PORT
