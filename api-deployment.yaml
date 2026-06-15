@@ -25,3 +25,13 @@ spec:
                configMapKeyRef:
                  name: synergychat-api-configmap
                  key: API_PORT
+           - name: WEB_PORT
+             valueFrom:
+               configMapKeyRef:
+                 name: synergychat-api-configmap
+                 key: WEB_PORT
+           - name: API_URL
+             valueFrom:
+               configMapKeyRef:
+                 name: synergychat-api-configmap
+                 key: API_URL
